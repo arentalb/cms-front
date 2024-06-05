@@ -1,13 +1,14 @@
-import { useTranslation } from "react-i18next";
+import { EditableText } from "../EditableText.jsx";
 
 export function Footer() {
-  const { t } = useTranslation("footer");
-
   return (
     <footer className="bg-gray-800 p-4 text-white text-center">
-      <p>{t("copyright")}</p>
-      <p>{t("contact")}</p>
-      <button>{t("buttons:submit")}</button>
+      <p>
+        <EditableText translationKey="footer:copyright" />
+      </p>
+      <p>
+        <EditableText translationKey="footer:contact" />
+      </p>
     </footer>
   );
 }

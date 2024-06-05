@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { EditableText } from "../EditableText.jsx";
 
 export function Header() {
   const { t, i18n } = useTranslation("header");
@@ -19,12 +20,14 @@ export function Header() {
   return (
     <header className="bg-gray-800 p-4 text-white">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">{t("title")}</h1>
+        <h1 className="text-2xl font-bold">
+          <EditableText translationKey="header:title" />
+        </h1>
         <nav>
           <ul className="flex space-x-4">
             <li>
               <Link to="/" className="hover:underline">
-                {t("subtitle")}
+                <EditableText translationKey="header:subtitle" />
               </Link>
             </li>
             <li>
