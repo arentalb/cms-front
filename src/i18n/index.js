@@ -1,37 +1,13 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-
-import enHeader from "./locales/en/components/header.json";
-import enFooter from "./locales/en/components/footer.json";
-import enHome from "./locales/en/home.json";
-import enAbout from "./locales/en/about.json";
-import enCommon from "./locales/en/common.json";
-
-import krHeader from "./locales/kr/components/header.json";
-import krFooter from "./locales/kr/components/footer.json";
-import krHome from "./locales/kr/home.json";
-import krAbout from "./locales/kr/about.json";
-import krCommon from "./locales/kr/common.json";
+import HttpBackend from "i18next-http-backend";
 
 i18n
+  .use(HttpBackend)
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
-    resources: {
-      en: {
-        home: enHome,
-        about: enAbout,
-        common: enCommon,
-        "components/header": enHeader,
-        "components/footer": enFooter,
-      },
-
-      kr: {
-        home: krHome,
-        about: krAbout,
-        common: krCommon,
-        "components/header": krHeader,
-        "components/footer": krFooter,
-      },
+    backend: {
+      loadPath: "http://localhost:6060/locales/{{lng}}/{{ns}}.json", // URL to load translations from your backend
     },
     lng: "en", // default language
     fallbackLng: "en",
