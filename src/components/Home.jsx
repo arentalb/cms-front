@@ -10,9 +10,8 @@ export function Home() {
       <Header />
       <main className="flex-grow">
         <div className="container mx-auto p-4">
-          <h1 className="text-3xl font-bold mb-4">{t("title")}</h1>
-          <h2 className="text-xl font-semibold mb-2">{t("subtitle")}</h2>
-          <p className="text-base">{t("content")}</p>
+          <h1 className="text-3xl font-bold mb-4">{t("content")}</h1>
+          <h2 className="text-xl font-semibold mb-2">{t("title")}</h2>
         </div>
       </main>
       <Footer />

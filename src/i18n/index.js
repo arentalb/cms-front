@@ -7,12 +7,13 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     backend: {
-      loadPath: "http://localhost:6060/locales/{{lng}}/{{ns}}.json", // URL to load translations from your backend
+      // loadPath: "http://localhost:6060/locales/{{lng}}/{{ns}}.json", // URL to load translations from your backend
+      loadPath: "http://localhost:6060/api/translation/{{lng}}/{{ns}}", // URL to load translations with placeholders
     },
     lng: "en", // default language
     fallbackLng: "en",
-    ns: ["common", "home", "about", "components/header", "components/footer"], // Define namespaces
-    defaultNS: "common", // Default namespace
+    ns: ["home", "about", "header", "footer", "buttons"],
+    defaultNS: "home", // Default namespace
 
     interpolation: {
       escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape

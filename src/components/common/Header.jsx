@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 export function Header() {
-  const { t, i18n } = useTranslation(["common", "components/header"]);
+  const { t, i18n } = useTranslation("header");
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -19,17 +19,17 @@ export function Header() {
   return (
     <header className="bg-gray-800 p-4 text-white">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">{t("components/header:welcome")}</h1>
+        <h1 className="text-2xl font-bold">{t("title")}</h1>
         <nav>
           <ul className="flex space-x-4">
             <li>
               <Link to="/" className="hover:underline">
-                {t("common:navbar.home")}
+                {t("subtitle")}
               </Link>
             </li>
             <li>
               <Link to="/about" className="hover:underline">
-                {t("common:navbar.about")}
+                about
               </Link>
             </li>
           </ul>
