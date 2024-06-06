@@ -71,7 +71,7 @@ export function EditableText({ translationKey }) {
             onClick={handleSave}
             className="bg-green-600 text-white px-4 py-2 rounded-md text-lg"
           >
-            Save
+            {i18n.language === "kr" ? "هەڵگرتن" : "Save"}
           </button>
         </div>
       </Modal>
