@@ -6,10 +6,10 @@ export function Header() {
   const [menu, setMenu] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const { t, i18n } = useTranslation("header");
+  const { i18n } = useTranslation("header");
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    console.log("chnage language ", lng);
+    setDropdownOpen(false);
   };
 
   useEffect(() => {
@@ -101,27 +101,34 @@ export function Header() {
           </ul>
         </nav>
       )}
-      <div className="fixed bottom-10 right-10">
+      <div className="fixed text-xs sm:text-base right-2 top-1/2 transform -translate-y-1/2">
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white flex justify-center items-center font-bold p-4 w-6 h-6 rounded-full"
+          className="bg-blue-500 hover:bg-blue-700 text-white flex flex-col justify-center items-center font-bold p-4 rounded-full"
           onClick={() => setDropdownOpen(!dropdownOpen)}
         >
-          La
+          {i18n.language === "kr"
+            ? ["ز", "م", "ا", "ن", "ە", "ک", "ا", "ن"].map((char, index) => (
+                <span key={index}>{char}</span>
+              ))
+            : ["L", "a", "n", "g", "u", "a", "g", "e", "s"].map(
+                (char, index) => <span key={index}>{char}</span>,
+              )}
         </button>
         {dropdownOpen && (
-          <div className="absolute right-0 -top-24 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-20">
+          <div className="absolute right-12 top-1/2 transform -translate-y-1/2   bg-white z-20 space-y-2">
             <button
-              className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
+              className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100  border border-gray-300 rounded-md shadow-lg "
               onClick={() => changeLanguage("en")}
             >
               English
             </button>
             <button
-              className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
+              className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100  border border-gray-300 rounded-md shadow-lg "
               onClick={() => changeLanguage("kr")}
             >
-              Kurdish
+              کوردی
             </button>
+
             {/* Add more language options here if needed */}
           </div>
         )}
