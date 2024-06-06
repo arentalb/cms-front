@@ -12,7 +12,7 @@ i18n
     },
     lng: "en", // default language
     fallbackLng: "en",
-    ns: ["home", "about", "header", "footer", "buttons"],
+    ns: ["home", "about", "header", "footer", "buttons", "hero"],
     defaultNS: "home", // Default namespace
 
     interpolation: {

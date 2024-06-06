@@ -1,4 +1,4 @@
-import { EditableText } from "../EditableText.jsx";
+import { EditableText } from "./EditableText.jsx";
 
 export function Footer() {
   return (

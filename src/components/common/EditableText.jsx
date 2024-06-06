@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useUser } from "../UserContext.jsx";
+import { useUser } from "../../UserContext.jsx";
 import { Modal } from "./Modal.jsx";
 
 export function EditableText({ translationKey }) {

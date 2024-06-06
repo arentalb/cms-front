@@ -1,6 +1,6 @@
 import { Header } from "./common/Header.jsx";
 import { Footer } from "./common/Footer.jsx";
-import { EditableText } from "./EditableText.jsx";
+import { EditableText } from "./common/EditableText.jsx";
 
 export function About() {
   return (

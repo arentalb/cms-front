@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import { EditableText } from "../EditableText.jsx";
+import { EditableText } from "./EditableText.jsx";
 
 export function Header() {
   const [menu, setMenu] = useState(false);
