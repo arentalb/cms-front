@@ -8,7 +8,7 @@ import { Loader } from "./components/common/Loader.jsx";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(localStorage.getItem("i18nextLng"));
 
   useEffect(() => {
     i18next.on("loaded", () => {
@@ -26,7 +26,7 @@ function App() {
   if (isLoading) {
     let message;
     if (language === "kr") {
-      message = "سوپاس بۆ چاوەڕوانی";
+      message = "سوپاس بۆ چاوەڕوانیت";
     } else {
       message = "Thanks For Waiting ";
     }
