@@ -12,8 +12,8 @@ i18n
     },
     lng: "en", // default language
     fallbackLng: "en",
-    ns: ["home", "about", "header", "footer", "buttons", "hero"],
-    defaultNS: "home", // Default namespace
+    ns: ["header", "footer", "hero"],
+    defaultNS: "hero", // Default namespace
 
     interpolation: {
       escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
